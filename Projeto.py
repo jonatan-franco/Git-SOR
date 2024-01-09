@@ -41,7 +41,7 @@ reforco_constante = 10 # T/C = 60/6 = 10
     #'comportamento'
 comp = np.linspace(0.01,10)
 
-    #'para cada valor de comportamento (por isso o 'len' e não a variavel em si) o y será constante'
+    #'para cada valor de comportamento o y será constante'
 taxa_reforcamento_3 = [reforco_constante] * len(comp)
 
 

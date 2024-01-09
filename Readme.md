@@ -68,3 +68,16 @@ Sendo assim, o que descreve a taxa de reforçamento neste esquema, é: 1) ela de
 Neste esquema, o que se tem é simples: a taxa de reforçamento depende de uma constante única, o tempo. Ou seja, matematicamente o que se tem é: 
 ```
 R = T/C,
+```
+> onde T é o tempo total da sessão e C a exigencia do esquema.
+
+No código, você encontrará:
+```python
+taxa_reforcamento_3  = [reforco_constante] *  len(comp)
+```
+
+>De forma implícita, está que  'reforco_constante' = T/C, por isso a fórmula para VT não está no código de forma explícita, pois ela não é necessária para a implementação, apenas o valor da taxa (T/C = 10 = reforco_constante)
+ 
+É pelo fato de se ter uma taxa constante para todo valor que 'x' assumir que coloca-se 'len' e não a variavel em si, ou seja, eu quero que o programe contabilize cada elemento de 'comp' e cruze com a variável reforco_constante, ou seja, estou pegando R = 10 e aplicando para todo valor do conjunto do comportamento. 
+
+Ou seja, para todo e qualquer elemento do conjunto 'x' (respostas), obtém-se uma mesma taxa constante de reforço.  Analisando esta relação pelo óculos dos estudos de derivada, então teríamos que f(x) representa a função que mapeia reforço e repostas, uma d(x) seria a variação que o reforço sofre dado uma resposta; sendo assim, se obtivéssemos uma derivada nula, concluiríamos que a resposta nao produz nenhuma alteração na taxa de reforçamento, ou seja, a derivada primeira sendo 0 para todo o intervalo do eixo das abscissas é uma descrição matemática do esquema de tempo variável e o possível aparecimento de um comportamento supersticioso.
