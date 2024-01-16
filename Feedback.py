@@ -1,33 +1,38 @@
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 
 # FUNÇÃO
 
-expoente = np.arange(0.1, 1.1, 0.1)
-
 def feed(t,n):
-    return 60 * (t/100-t) ** n
-        # maximo de reforço = 60
+    if n == 0 and t == 0:
+        return 20
+    else:
+        return 20*(t/10)**n
         
-# VARIAVEIS
+# VARIÁVEIS
 
-tempo_operante = np.arange(0, 100)
-
+time_operante = np.arange(0, 10,0.1)
+expoente = np.arange(0, 1,0.02)
 reforco = []
 
-# ITERAR
+
+# ITERAÇO
 
 for e in expoente:
-    for i in tempo_operante:
-        reforco.append(feed(e,i))
-    plt.plot(tempo_operante, reforco, label = f'Expoente {e}' )
+    for t in time_operante:
+        print(f"expoente: {e} |" , f"tempo: {t}")
+        reforco.append(feed(t,e))       
+    
+    plt.plot(time_operante, reforco)
     reforco = []
-
-# plt.legend()    
-
-
-plt.title("Feedback Function")
-plt.xlabel("Tempo total")
-plt.ylabel("Reforço")
+   
+   
+# PLOTS
+ 
+plt.title("Função de Feedback")
+plt.xlabel('Tempo')
+plt.ylabel('Reforco')
 plt.show()
+        
