@@ -44,11 +44,11 @@ reforco1 = []
 
 def get_legenda(expoente):
     if expoente == 0:
-        return 'VT10'
+        return 'VT'
     elif expoente == 1:
-        return 'FR10'
+        return 'FR1'
     elif expoente == 2:
-        return 'VR5'
+        return 'VR2'
     else:
         return f'expoente = {expoente:.2f}'
 
