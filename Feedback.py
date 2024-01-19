@@ -2,7 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# FUNÇÕES
+'''
+A primeira função gera os esquemas de razão e o de tempo (VT). 
+A segunda função é responsável por criar o esquema de intervalo (VI).
+'''
+
+
 
     # funcao 1
     
@@ -22,19 +27,19 @@ def feedback_1 (t):
 
 
 
-    # variaveis funcao 1
+    # variáveis função 1
     
 tempo = np.linspace(0,1)
 expoente = np.arange(4)    
 reforco = []
 
-    # variaveis funcao 2
+    # variáveis funçãoo 2
 
 tempo1 = np.linspace(0,1)
 reforco1 = []
     
 
-# ITERAÇAO
+    # iteração
 
 for e in expoente:  
     reforco = []  
