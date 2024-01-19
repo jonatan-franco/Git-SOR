@@ -22,7 +22,7 @@ def feedback(t,n):
     # funcao 2 
     
 def feedback_1 (t):
-    return 10 * (t/1) ** 0.058
+    return 10 * (t/1) ** 0.1
 
 
 
