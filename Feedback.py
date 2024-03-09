@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import math as mt
 
 '''
 A primeira função gera os esquemas de razão (FR, VR) e o de tempo (VT). 
@@ -14,12 +14,14 @@ A segunda função é responsável por criar o esquema de intervalo (VI).
 def feedback(t,n):
     if n == 0:
         return 10
-     
+    
+    elif n == 1:
+        return 5*t # VR
     else:
-        return 10 * (t/1) ** 1 / n
+        return 10*t # FR
     
     
-    # funcao 2 
+    # funcao 2: VI
     
 def feedback_1 (t):
     return 10 * (t/1) ** 0.1
@@ -29,7 +31,7 @@ def feedback_1 (t):
     # variáveis função 1
     
 tempo = np.linspace(0,1)
-expoente = np.arange(3)    
+expoente = np.linspace(0,1,3)  
 reforco = []
 
     # variáveis funçãoo 2
@@ -39,18 +41,17 @@ reforco1 = []
     
 
     # iteração
-
-
-
 def get_legenda(expoente):
     if expoente == 0:
-        return 'VT'
+        return f'VT expoente = {0}'
     elif expoente == 1:
-        return 'FR1'
-    elif expoente == 2:
-        return 'VR2'
+        return f'VR expoente = {1}'
+    elif expoente == 0.1:
+        return f'VI expoente = {0.1}'
     else:
-        return f'expoente = {expoente:.2f}'
+        return f'FR expoente = {1}'
+    
+print(expoente)
 
 for e in expoente:  
     reforco = []  
@@ -64,7 +65,7 @@ for e in expoente:
 for time in tempo1:
         # print(e,t)
     reforco1.append(feedback_1(time))
-plt.plot(tempo1,reforco1, label = "VI")
+plt.plot(tempo1,reforco1, label = get_legenda(0.1))
 reforco1 = []
 
 # PLOTS
