@@ -72,7 +72,7 @@ Sendo assim, o que descreve a taxa de reforçamento neste esquema, é: 1) ela de
 
 Neste esquema, o que se tem é simples: a taxa de reforçamento depende de uma constante única, o tempo. Ou seja, matematicamente o que se tem é: 
 ```
-R = T/C,
+R = T/C
 ```
 > onde T é o tempo total da sessão e C a exigencia do esquema.
 
@@ -81,7 +81,7 @@ No código, você encontrará:
 taxa_reforcamento_3  = [reforco_constante] *  len(comp)
 ```
 
->De forma implícita, está que  'reforco_constante' = T/C, por isso a fórmula para VT não está no código de forma explícita, pois ela não é necessária para a implementação, apenas o valor da taxa (T/C = 10 = reforco_constante)
+>De forma implícita, está que  $reforco_{constante} = T/C$, por isso a fórmula para VT não está no código de forma explícita, pois ela não é necessária para a implementação, apenas o valor da taxa ($T/C = 10 = reforco_{constante}$)
  
 É pelo fato de se ter uma taxa constante para todo valor que 'x' assumir que coloca-se 'len' e não a variavel em si, ou seja, eu quero que o programe contabilize cada elemento de 'comp' e cruze com a variável reforco_constante, ou seja, estou pegando R = 10 e aplicando para todo valor do conjunto do comportamento. 
 
