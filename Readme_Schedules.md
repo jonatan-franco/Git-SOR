@@ -32,11 +32,13 @@ y = a*x
 ```
 Com 'a' sendo inteiro, estamos dizendo que, a medida que aumenta 'x', 'y' crescerá em um fator de 'a'. É como se fosse uma constante de conversão de real para dólar. Quando temos uma FR10, por exemplo, estamos dizendo que a cada 10 respostas o organismo receberá 1 reforço. Logo, quanto maior essa 'exigencia'/'dificuldade' de obter o reforçador, maior a inclinação da reta em direção ao eixo-x, é como se estivéssemos tentando forçar uma relação quase negativa entre resposta e reforço. Então, para representarmos essa possibilidade de relação, podemos escrever assim:
 
-$y = \frac{1}{a}*x$
+$y = \dfrac{1}{a}*x$
 
-Então, no caso em que a = 1, f(x) = x, entretanto, $a \ge 0 \implies f(x) \neq x$ logo, entendemos que a relação entre f(x) e x (reforço e resposta, respectivamente) é lida como: a cada 1 resposta em x aumenta-se 1/a reforços. Ex.:
-$reforco = 1\frac{1}{5}*resposta$
-A cada 1 pressionada na barra a mais, aumenta-se $\frac{1}{5}$ reforços, ou seja, para obter 1 reforço são necessárias $1*\frac{5}{1} = 5$ respostas.
+Então, no caso em que $a = 1$, $$f(x) = x$$, entretanto, $a > 0 \implies f(x) \neq x$ logo, entendemos que a relação entre $f(x)$ e $x$ (reforço e resposta, respectivamente) é lida como: a cada 1 resposta em x aumenta-se $\frac{1}{a}$ reforços. Ex.:
+
+$reforco = \dfrac{1}{5}*resposta$
+
+A cada 1 resposta de pressão à barra a mais, aumenta $\dfrac{1}{5}$ unidades do estímulo reforçador (gramas do alimento ou ml de água, por exemplo), ou seja, para obter 1 reforço são necessárias $1*\dfrac{5}{1} = 5$ respostas.
 
 ## Variable Ratio
 
@@ -49,7 +51,7 @@ Sendo assim, o que se encontra no código é:
 def reforco(resposta):
 	return resposta/5
 ```
-O que este código diz é: pegue a quantidade total de respostas dentro de uma sessão e divida pela exigencia (tamanho) do esquema (5), e obterá a taxa de reforço que se pode obter neste esquema (R=2), ou seja, na sessão inteira, pode-se obter 2 reforçadores ao todo, com a taxa sendo x/5 para cada resposta, ou seja, a probabilidade de se obter o reforçador aumenta com o aumento da resposta: P(r=1|x=5) >P(r=1|x = 1).
+O que este código diz é: pegue a quantidade total de respostas dentro de uma sessão e divida pela exigencia (tamanho) do esquema (5), e obterá a taxa de reforço que se pode obter neste esquema (R=2), ou seja, na sessão inteira, pode-se obter 2 reforçadores ao todo, com a taxa sendo x/5 para cada resposta, ou seja, a probabilidade de se obter o reforçador aumenta com o aumento da resposta: $P(r=1|x=5) >P(r=1|x = 1)$.
 > A probabilidade de receber reforço (r=1) é maior, dado que apertou a barra 5 vezes, do que a probabilidade de receber reforço quando se comportou 1 vez. 
 
 ## Variable Interval
