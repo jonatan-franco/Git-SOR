@@ -13,12 +13,11 @@ f(x) = a*x
 
 Dado que o esquema é de razão fixa, então a taxa é constante, ou seja, ***a* = 1**, isto resultada em **f(x) = x**, ou seja, a taxa de reforçamento será igual a taxa de resposta.
 
-```
 \[
 a = \Delta_{y}/\Delta_{x}
 (y2-y1) = m(x2-x1)
 \]
-```
+
 É possível perceber que uma taxa constante só é possível quando os deltas(x,y) são iguais, ou seja, a taxa de resposta cresce a taxa constantes porque foi pré-definido no esquema que a 'x' respostas **fixas**, por isso, a resposta não pode aumentar de 10 para 20, por exemplo, e receber 20 reforços. E justamente por isso que você encontrará: 
 
 ```python
