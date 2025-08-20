@@ -14,10 +14,10 @@ f(x) = a*x
 Dado que o esquema é de razão fixa, então a taxa é constante, ou seja, ***a* = 1**, isto resultada em **f(x) = x**, ou seja, a taxa de reforçamento será igual a taxa de resposta.
 
 $a = \Delta_{y}/\Delta_{x}$
-$(y2-y1) = m(x2-x1)$
 
+$(y_{2}-y_{1}) = m(x_{2}-x_{1})$
 
-É possível perceber que uma taxa constante só é possível quando os deltas(x,y) são iguais, ou seja, a taxa de resposta cresce a taxa constantes porque foi pré-definido no esquema que a 'x' respostas **fixas**, por isso, a resposta não pode aumentar de 10 para 20, por exemplo, e receber 20 reforços. E justamente por isso que você encontrará: 
+É possível perceber que uma taxa constante só é possível quando os deltas(x,y) são iguais, ou seja, a taxa de resposta cresce a taxa constantes porque foi pré-definido no esquema que 'x' respostas **fixas** (e por isso, a resposta não pode aumentar de 10 para 20, por exemplo) e receber 20 reforços. E este é o motivo para te fará encontrar: 
 
 ```python
 def reforco_0(comportamento_0):
@@ -25,20 +25,18 @@ def reforco_0(comportamento_0):
 ```
 
 ### Coeficiente angular
-É possível obter a = 10 e isto significar FR10? Testemos: a cada 10 resposta, obtenho 1 reforço. 
-```
-(y2-y1)*a =(x2-x1)
-\Delta_{y}/delta_x=10
+Caso tenha percebido, é o coeficiente angular que descreve a exigência do esquema, se pouco ou muito exigente. É, fazendo um paralelo, o parâmetro de 'dificuldade' da Teoria de Resposta ao Item (TRI). Entretanto, quando temos uma função linear:
 
 ```
-conclui-se que delta_y precisa ser 10x maior que delta_x:
+y = a*x
+```
+Com 'a' sendo inteiro, estamos dizendo que, a medida que aumenta 'x', 'y' crescerá em um fator de 'a'. É como se fosse uma constante de conversão de real para dólar. Quando temos uma FR10, por exemplo, estamos dizendo que a cada 10 respostas o organismo receberá 1 reforço. Logo, quanto maior essa 'exigencia'/'dificuldade' de obter o reforçador, maior a inclinação da reta em direção ao eixo-x, é como se estivéssemos tentando forçar uma relação quase negativa entre resposta e reforço. Então, para representarmos essa possibilidade de relação, podemos escrever assim:
 
-> nao é possível porque se eu fizer a = 10, entao, a cada x, tenho inclinação de 10 unidades, sendo assim, nao expressa o esquema que quero demonstrar: a cada DEZ respostas tenho UM reforço, e não **a cada resposta uma inclinação de 10 unidades**.
-> É interessante pensar também no coeficiente linear, porque eu poderia pensar f(x)=a*x+b, com *b* sendo o reforço que o indivíduo ja recebeu, ou seja, eu poderia fazer duas restas em que o indiv1 nao recebeu nada b=0, e o indiv2 recebeu 2 reforços e ver o que acontece (Imagem abaixo)
+$y = \frac{1}{a}*x$
 
-![enter image description here](https://media.discordapp.net/attachments/1159224295642374255/1194103584242028605/image.png?ex=65af229f&is=659cad9f&hm=a3724ba84ed6bfcf1e7e913bcf7e947b36d5802696e359264f317304b5a8e3a3&=&format=webp&quality=lossless)
-
-
+Então, no caso em que a = 1, f(x) = x, entretanto, $a \ge 0 \implies f(x) \neq x$ logo, entendemos que a relação entre f(x) e x (reforço e resposta, respectivamente) é lida como: a cada 1 resposta em x aumenta-se 1/a reforços. Ex.:
+$reforco = 1\frac{1}{5}*resposta$
+A cada 1 pressionada na barra a mais, aumenta-se $\frac{1}{5}$ reforços, ou seja, para obter 1 reforço são necessárias $1*\frac{5}{1} = 5$ respostas.
 
 ## Variable Ratio
 
