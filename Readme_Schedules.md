@@ -18,14 +18,19 @@ a = delta_y/delta_x
 (y2-y1) = m(x2-x1)
 ```
 É possível perceber que uma taxa constante só é possível quando os deltas(x,y) são iguais, ou seja, a taxa de resposta cresce a taxa constantes porque foi pré-definido no esquema que a 'x' respostas **fixas**, por isso, a resposta não pode aumentar de 10 para 20, por exemplo, e receber 20 reforços. E justamente por isso que você encontrará: 
+
 ```python
 def reforco_0(comportamento_0):
 	return comportamento_0
 ```
+
 ### Coeficiente angular
 É possível obter a = 10 e isto significar FR10? Testemos: a cada 10 resposta, obtenho 1 reforço. 
+```
 (y2-y1)*a =(x2-x1)
-delta_y/delta_x=10
+\Delta_{y}/delta_x=10
+
+```
 conclui-se que delta_y precisa ser 10x maior que delta_x:
 
 > nao é possível porque se eu fizer a = 10, entao, a cada x, tenho inclinação de 10 unidades, sendo assim, nao expressa o esquema que quero demonstrar: a cada DEZ respostas tenho UM reforço, e não **a cada resposta uma inclinação de 10 unidades**.
