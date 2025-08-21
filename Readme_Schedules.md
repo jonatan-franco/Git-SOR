@@ -1,8 +1,11 @@
-# Esquemas de reforçamento 
 
 Olá! Este arquivo irá te orientar na interpretação dos códigos cujos quais contém algumas equações, talvez, não tão familiares.
 
+Referência
 
+Meneses, T. C., Portella, B. S., & Benvenuti, M. F. L. (2022). Análise quantitativa do comportamento: possíveis interfaces entre Psicologia e Economia no estudo de tomada de decisões. Revista Brasileira De Terapia Comportamental E Cognitiva, 23(1), 1–19. https://doi.org/10.31505/rbtcc.v23i1.1518
+
+# Esquemas de reforçamento 
 ## Fixed Ratio (Razão Fixa)
 
 Este primeiro esquema é na forma:
@@ -27,9 +30,8 @@ def reforco_0(comportamento_0):
 ### Coeficiente angular
 Caso tenha percebido, é o coeficiente angular que descreve a exigência do esquema, se pouco ou muito exigente. É, fazendo um paralelo, o parâmetro de 'dificuldade' da Teoria de Resposta ao Item (TRI). Entretanto, quando temos uma função linear:
 
-```
-y = a*x
-```
+$y = a*x$
+
 Com 'a' sendo inteiro, estamos dizendo que, a medida que aumenta 'x', 'y' crescerá em um fator de 'a'. É como se fosse uma constante de conversão de real para dólar. Quando temos uma FR10, por exemplo, estamos dizendo que a cada 10 respostas o organismo receberá 1 reforço. Logo, quanto maior essa 'exigencia'/'dificuldade' de obter o reforçador, maior a inclinação da reta em direção ao eixo-x, é como se estivéssemos tentando forçar uma relação quase negativa entre resposta e reforço. Então, para representarmos essa possibilidade de relação, podemos escrever assim:
 
 $y = \dfrac{1}{a}*x$
@@ -64,16 +66,16 @@ def reforco(comportamento):
 > T: tempo total da sessão (T=60),
 > C: tamanho do esquema (C=6)
 > comportamento: B
-> 1/comportamento: entende-se aqui que, quando comportamento --> +inf/-inf, então 0.5*(1/comportamento) --> 0, ou seja, a medida que as respostas aumentam, chega-se próximo a uma assíntota horizontal em T/C, que neste caso é 10 (60/6=10), e também quando o comportamento (B) tende a zero pela direita e esquerda, essa fração 1/B --> +/-inf, ou seja, a assíntota vertical se encontra em B = 0, isto é, a função se aproxima de 0 sem nunca tocá-lo. 
+> 1/comportamento: entende-se aqui que, quando $B \implies +\infty$ ou  $B \implies -\infty$, então $0.5*\frac{1}{B}) \implies 0$, ou seja, a medida que as respostas aumentam, chega-se próximo a uma assíntota horizontal em $\frac{T}{C}$, que neste caso é $10$ ($60/6=10$), e também quando o comportamento (B) tende a zero pela direita e esquerda, essa fração $\frac{1}{B} \implies + \infty  ou  -\infty$, ou seja, a assíntota vertical se encontra em B = 0, isto é, a função se aproxima de 0 sem nunca tocá-lo. 
 
 Sendo assim, o que descreve a taxa de reforçamento neste esquema, é: 1) ela depende do tempo total em que a sessão é realizada; 2) o tempo médio entre cada reforço dado que a resposta já ocorreu; e 3) a resposta cresce a taxas decrescentes.
 
 ## Variable Time
 
 Neste esquema, o que se tem é simples: a taxa de reforçamento depende de uma constante única, o tempo. Ou seja, matematicamente o que se tem é: 
-```
-R = T/C
-```
+
+$R = \frac{T}{C}$
+
 > onde T é o tempo total da sessão e C a exigencia do esquema.
 
 No código, você encontrará:
@@ -81,7 +83,7 @@ No código, você encontrará:
 taxa_reforcamento_3  = [reforco_constante] *  len(comp)
 ```
 
->De forma implícita, está que  $reforco_{constante} = T/C$, por isso a fórmula para VT não está no código de forma explícita, pois ela não é necessária para a implementação, apenas o valor da taxa ($T/C = 10 = reforco_{constante}$)
+>De forma implícita, está que  reforco_constante = T/C, por isso a fórmula para VT não está no código de forma explícita, pois ela não é necessária para a implementação, apenas o valor da taxa ($T/C = 10$ = reforco_constante)
  
 É pelo fato de se ter uma taxa constante para todo valor que 'x' assumir que coloca-se 'len' e não a variavel em si, ou seja, eu quero que o programe contabilize cada elemento de 'comp' e cruze com a variável reforco_constante, ou seja, estou pegando R = 10 e aplicando para todo valor do conjunto do comportamento. 
 
